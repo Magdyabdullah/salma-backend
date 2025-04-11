@@ -51,9 +51,9 @@ app.post('/salma', async (req, res) => {
             source_url: 'https://create-images-results.d-id.com/DefaultAvatar.jpg' // You can replace with custom avatar
         }, {
             headers: {
-                Authorization: `Basic ${DID_API_KEY}`,
-                'Content-Type': 'application/json'
-            }
+  Authorization: `Basic ${Buffer.from(process.env.DID_API_KEY).toString('base64')}`,
+  'Content-Type': 'application/json'
+}
         });
 
         const videoUrl = didResponse.data.result_url;
