@@ -3,7 +3,9 @@ import cors from 'cors';
 import axios from 'axios';
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: '*'
+}));
 app.use(express.json());
 
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
